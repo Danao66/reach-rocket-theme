@@ -39,10 +39,10 @@
   #rr-root .rr-fade.d2 { transition-delay: .2s !important; }
   #rr-root .rr-fade.d3 { transition-delay: .3s !important; }
   #rr-root .rr-fade.d4 { transition-delay: .4s !important; }
-  #rr-root .rr-rocket-anim { animation: rocketFloat 3s ease-in-out infinite !important; display: inline-block !important; }
+  #rr-root .rr-rocket-anim { animation: rocketFloat 3s ease-in-out infinite !important; display: inline-block !important; font-size: 80px !important; }
   #rr-root .rr-orbit  { animation: orbit 12s linear infinite !important; position: absolute !important; width: 10px !important; height: 10px !important; background: #FF2D00 !important; border-radius: 50% !important; opacity: .6 !important; }
   #rr-root .rr-orbit2 { animation: orbit2 8s linear infinite reverse !important; position: absolute !important; width: 6px !important; height: 6px !important; background: #FFB800 !important; border-radius: 50% !important; opacity: .4 !important; }
-  #rr-root .rr-shimmer { background: linear-gradient(90deg,#F0EEE8 0%,#FFB800 50%,#F0EEE8 100%) !important; background-size: 200% auto !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; animation: shimmer 4s linear infinite !important; }
+  #rr-root .rr-shimmer { background: linear-gradient(90deg,#F0EEE8 0%,#FFB800 50%,#F0EEE8 100%) !important; background-size: 200% auto !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; animation: shimmer 4s linear infinite !important; display: inline-block !important; will-change: background-position !important; }
   #rr-root .rr-glow { text-shadow: 0 0 60px rgba(255,45,0,.5) !important; }
   #rr-root .rr-grid-bg { background-image: linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px) !important; background-size: 60px 60px !important; }
   #rr-noise { position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; pointer-events: none !important; z-index: 0 !important; opacity: .025 !important; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") !important; background-size: 150px !important; }
@@ -141,7 +141,7 @@
     <div class="rr-hero-inner">
       <div class="rr-fade"><span class="rr-badge">Agence Marketing Systémique</span></div>
       <div class="rr-fade d1" style="margin:32px 0 24px">
-        <div class="rr-rocket-anim" style="font-size:80px;margin-bottom:16px">🚀</div>
+        <div class="rr-rocket-anim" style="margin-bottom:16px">🚀</div>
         <h1 class="rr-h1">
           <span class="rr-glow" style="color:#FF2D00">Pas</span> <span>un service.</span><br>
           <span class="rr-shimmer">Un système.</span>
@@ -377,10 +377,17 @@ function selectPack(id) {
 window.addEventListener('scroll', () => {
   document.getElementById('rr-header').classList.toggle('solid', window.scrollY > 60);
 });
+// Hero elements: appear immediately with stagger
+document.querySelectorAll('#rr-hero .rr-fade').forEach((el, i) => {
+  setTimeout(() => el.classList.add('visible'), 100 + i * 200);
+});
+// All other sections: observe on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
-document.querySelectorAll('.rr-fade').forEach(el => observer.observe(el));
+document.querySelectorAll('.rr-fade').forEach(el => {
+  if (!el.closest('#rr-hero')) observer.observe(el);
+});
 </script>
 </body>
 </html>
