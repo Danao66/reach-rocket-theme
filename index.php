@@ -141,6 +141,7 @@
     #rr-root .rr-pack-detail { padding: 28px !important; }
   }
 </style>
+<?php wp_head(); ?>
 </head>
 <body>
 <div id="rr-root">
@@ -422,5 +423,6 @@ document.querySelectorAll('.rr-fade').forEach(el => {
   if (!el.closest('#rr-hero')) observer.observe(el);
 });
 </script>
+<?php wp_footer(); ?>
 </body>
 </html>
