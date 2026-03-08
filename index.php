@@ -113,9 +113,21 @@
   #rr-footer { border-top: 1px solid rgba(255,255,255,.06) !important; padding: 48px 40px !important; display: flex !important; justify-content: space-between !important; align-items: center !important; flex-wrap: wrap !important; gap: 24px !important; max-width: 1100px !important; margin: 0 auto !important; }
   #rr-root .rr-footer-social span { color: rgba(240,238,232,.3) !important; font-size: 13px !important; cursor: pointer !important; transition: color .2s !important; font-family: 'Plus Jakarta Sans', sans-serif !important; }
   #rr-root .rr-footer-social span:hover { color: #FF2D00 !important; }
+  /* Hamburger button */
+  #rr-menu-btn { display: none !important; flex-direction: column !important; justify-content: center !important; gap: 5px !important; width: 44px !important; height: 44px !important; cursor: pointer !important; background: transparent !important; padding: 8px !important; z-index: 10001 !important; }
+  #rr-menu-btn span { display: block !important; width: 22px !important; height: 2px !important; background: #F0EEE8 !important; border-radius: 2px !important; transition: all .3s !important; }
+  /* Mobile menu overlay */
+  #rr-mobile-menu { display: none !important; position: fixed !important; inset: 0 !important; z-index: 10000 !important; background: rgba(8,8,14,.97) !important; backdrop-filter: blur(20px) !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 32px !important; }
+  #rr-mobile-menu.open { display: flex !important; }
+  #rr-menu-close { position: absolute !important; top: 24px !important; right: 24px !important; background: transparent !important; color: rgba(240,238,232,.5) !important; font-size: 32px !important; cursor: pointer !important; font-family: 'Plus Jakarta Sans', sans-serif !important; transition: color .2s !important; padding: 8px !important; line-height: 1 !important; }
+  #rr-menu-close:hover { color: #F0EEE8 !important; }
+  #rr-root .rr-mobile-nav { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 20px !important; }
+  #rr-root .rr-mobile-nav a { font-family: 'Bebas Neue', cursive !important; font-size: 44px !important; letter-spacing: .05em !important; color: rgba(240,238,232,.7) !important; text-decoration: none !important; transition: color .2s !important; }
+  #rr-root .rr-mobile-nav a:hover { color: #FF2D00 !important; }
   @media (max-width: 768px) {
     #rr-header { padding: 16px 20px !important; }
     #rr-header .rr-nav { display: none !important; }
+    #rr-menu-btn { display: flex !important; }
     #rr-hero { padding: 100px 20px 60px !important; }
     #rr-root .rr-section { padding: 70px 20px !important; }
     #rr-root .rr-pack-detail { grid-template-columns: 1fr !important; }
@@ -141,7 +153,19 @@
       <a href="#rr-temoignages">Témoignages</a>
       <button class="rr-btn rr-btn-sm" onclick="window.location.href='mailto:ludovic.freelance@gmail.com'">Appel gratuit →</button>
     </nav>
+    <button id="rr-menu-btn" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+  <div id="rr-mobile-menu">
+    <button id="rr-menu-close" onclick="toggleMenu()">✕</button>
+    <div class="rr-mobile-nav">
+      <a href="#rr-systemes" onclick="toggleMenu()">Systèmes</a>
+      <a href="#rr-process" onclick="toggleMenu()">Processus</a>
+      <a href="#rr-temoignages" onclick="toggleMenu()">Témoignages</a>
+    </div>
+    <button class="rr-btn" style="font-size:16px;padding:18px 40px;margin-top:8px" onclick="window.location.href='mailto:ludovic.freelance@gmail.com';toggleMenu()">Appel gratuit →</button>
+  </div>
   <section id="rr-hero" class="rr-grid-bg">
     <div class="rr-hero-orb"></div>
     <div class="rr-orbit-wrap">
@@ -270,7 +294,7 @@
           <div class="rr-service-check"><span style="color:#FF2D00;font-size:16px;flex-shrink:0">✓</span><span>Tout le Système Lancement +</span></div>
           <div class="rr-service-check"><span style="color:#FF2D00;font-size:16px;flex-shrink:0">✓</span><span>SEO local optimisé</span></div>
           <div class="rr-service-check"><span style="color:#FF2D00;font-size:16px;flex-shrink:0">✓</span><span>Gestion réseaux sociaux (2/sem)</span></div>
-          <div class="rr-service-check"><span style="color:#FF2D00;font-size:16px;flex-shrink:0">✓</span><span>Blog &amp; contenu stratégique</span></div>
+          <div class="rr-service-check"><span style="color:#FF2D00;font-size:16px;flex-shrink:0">✓</span><span>Blog & contenu stratégique</span></div>
           <div class="rr-service-check"><span style="color:#FF2D00;font-size:16px;flex-shrink:0">✓</span><span>Audit trimestriel de performance</span></div>
           <div class="rr-service-check"><span style="color:#FF2D00;font-size:16px;flex-shrink:0">✓</span><span>Consultant dédié</span></div>
         </div>
@@ -307,7 +331,7 @@
       </div>
       <div class="rr-step rr-fade d2">
         <div class="rr-step-num-wrap"><div class="rr-step-num">02</div><div class="rr-step-line"></div></div>
-        <div style="padding-top:12px;padding-bottom:48px"><h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Audit &amp; Stratégie</h3><p style="color:rgba(240,238,232,.55);font-size:15px;line-height:1.7">On analyse votre marché, vos concurrents, et on construit votre feuille de route personnalisée.</p></div>
+        <div style="padding-top:12px;padding-bottom:48px"><h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Audit & Stratégie</h3><p style="color:rgba(240,238,232,.55);font-size:15px;line-height:1.7">On analyse votre marché, vos concurrents, et on construit votre feuille de route personnalisée.</p></div>
       </div>
       <div class="rr-step rr-fade d3">
         <div class="rr-step-num-wrap"><div class="rr-step-num">03</div><div class="rr-step-line"></div></div>
@@ -329,7 +353,7 @@
         <div class="rr-card rr-fade d1">
           <div class="rr-stars">★★★★★</div>
           <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Mon compte a vraiment décollé. Ludovic s'investit à 200%, donne des conseils actionnables et livre ce qu'il promet. Je continue."</p>
-          <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">Y</div><div><div style="font-weight:700;font-size:14px">YsabelleRose</div><div style="color:rgba(240,238,232,.4);font-size:12px">Coach &amp; Créatrice de contenu</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">Y</div><div><div style="font-weight:700;font-size:14px">YsabelleRose</div><div style="color:rgba(240,238,232,.4);font-size:12px">Coach & Créatrice de contenu</div></div></div>
         </div>
         <div class="rr-card rr-fade d2">
           <div class="rr-stars">★★★★★</div>
@@ -372,6 +396,9 @@
   </footer>
 </div>
 <script>
+function toggleMenu() {
+  document.getElementById('rr-mobile-menu').classList.toggle('open');
+}
 function selectPack(id) {
   const packs = ['lancement','visibilite','domination'];
   packs.forEach(p => {
