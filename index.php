@@ -77,10 +77,22 @@
   #rr-root .rr-card { background: rgba(255,255,255,.03) !important; border: 1px solid rgba(255,255,255,.08) !important; border-radius: 20px !important; padding: 36px 32px !important; transition: all .3s !important; display: block !important; }
   #rr-root .rr-card:hover { border-color: rgba(255,255,255,.15) !important; background: rgba(255,255,255,.05) !important; }
   #rr-root .rr-solution-banner { margin-top: 56px !important; background: linear-gradient(135deg,rgba(255,45,0,.1),rgba(255,107,53,.05)) !important; border: 1px solid rgba(255,45,0,.25) !important; border-radius: 20px !important; padding: 40px 48px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; flex-wrap: wrap !important; gap: 24px !important; }
-  #rr-root .rr-tabs { display: flex !important; justify-content: center !important; gap: 10px !important; margin-bottom: 48px !important; flex-wrap: wrap !important; }
-  #rr-root .rr-tab { background: none !important; border: 1px solid rgba(240,238,232,.15) !important; border-radius: 50px !important; padding: 10px 22px !important; color: rgba(240,238,232,.5) !important; font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 13px !important; font-weight: 600 !important; cursor: pointer !important; transition: all .3s !important; letter-spacing: .05em !important; text-transform: uppercase !important; line-height: 1 !important; }
-  #rr-root .rr-tab.active { border-color: #FF2D00 !important; color: #F0EEE8 !important; background: rgba(255,45,0,.12) !important; }
-  #rr-root .rr-tab:hover:not(.active) { border-color: rgba(240,238,232,.35) !important; color: rgba(240,238,232,.75) !important; }
+  /* Pack switcher */
+  #rr-root .rr-pack-switcher { display: grid !important; grid-template-columns: repeat(3,1fr) !important; gap: 16px !important; margin-bottom: 40px !important; }
+  #rr-root .rr-pack-tab { background: rgba(255,255,255,.03) !important; border: 1.5px solid rgba(255,255,255,.1) !important; border-radius: 20px !important; padding: 28px 20px !important; cursor: pointer !important; transition: all .3s !important; text-align: center !important; position: relative !important; display: block !important; }
+  #rr-root .rr-pack-tab:hover:not(.active) { border-color: rgba(255,255,255,.22) !important; background: rgba(255,255,255,.05) !important; }
+  #rr-root .rr-pack-tab[data-pack="lancement"].active { box-shadow: 0 0 0 2px #FF6B35 !important; background: rgba(255,107,53,.07) !important; border-color: transparent !important; }
+  #rr-root .rr-pack-tab[data-pack="visibilite"].active { box-shadow: 0 0 0 2px #FF2D00 !important; background: rgba(255,45,0,.07) !important; border-color: transparent !important; }
+  #rr-root .rr-pack-tab[data-pack="domination"].active { box-shadow: 0 0 0 2px #FFB800 !important; background: rgba(255,184,0,.07) !important; border-color: transparent !important; }
+  #rr-root .rr-pack-tab-badge { font-size: 10px !important; font-weight: 700 !important; color: #FFB800 !important; letter-spacing: .1em !important; text-transform: uppercase !important; margin-bottom: 10px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; min-height: 18px !important; }
+  #rr-root .rr-pack-tab-name { font-family: 'Bebas Neue', cursive !important; font-size: 26px !important; letter-spacing: .05em !important; line-height: 1 !important; margin-bottom: 10px !important; }
+  #rr-root .rr-pack-tab[data-pack="lancement"] .rr-pack-tab-name { color: #FF6B35 !important; }
+  #rr-root .rr-pack-tab[data-pack="visibilite"] .rr-pack-tab-name { color: #FF2D00 !important; }
+  #rr-root .rr-pack-tab[data-pack="domination"] .rr-pack-tab-name { color: #FFB800 !important; }
+  #rr-root .rr-pack-tab-price { font-family: 'Bebas Neue', cursive !important; font-size: 40px !important; color: #F0EEE8 !important; line-height: 1 !important; }
+  #rr-root .rr-pack-tab-price em { font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 13px !important; font-style: normal !important; color: rgba(240,238,232,.4) !important; margin-left: 2px !important; }
+  #rr-root .rr-pack-tab-sub { font-size: 11px !important; color: rgba(240,238,232,.4) !important; text-transform: uppercase !important; letter-spacing: .08em !important; margin-top: 8px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; }
+  /* Pack detail cards */
   #rr-root .rr-pack-detail { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 32px !important; border-radius: 24px !important; padding: 48px !important; }
   #rr-root .rr-pack-highlight { background: linear-gradient(135deg,rgba(255,45,0,.1),rgba(255,107,53,.05)) !important; border: 1px solid rgba(255,45,0,.3) !important; }
   #rr-root .rr-pack-normal { background: rgba(255,255,255,.03) !important; border: 1px solid rgba(255,255,255,.08) !important; }
@@ -88,9 +100,6 @@
   #rr-root .rr-pack-price-big { font-family: 'Bebas Neue', cursive !important; font-size: 72px !important; letter-spacing: .02em !important; line-height: 1 !important; }
   #rr-root .rr-service-check { display: flex !important; align-items: center !important; gap: 10px !important; padding: 8px 0 !important; border-bottom: 1px solid rgba(240,238,232,.06) !important; font-size: 14px !important; color: rgba(240,238,232,.85) !important; font-family: 'Plus Jakarta Sans', sans-serif !important; }
   #rr-root .rr-service-check:last-child { border-bottom: none !important; }
-  #rr-root .rr-mini-cards { display: grid !important; grid-template-columns: repeat(3,1fr) !important; gap: 16px !important; margin-top: 24px !important; }
-  #rr-root .rr-mini-card { border-radius: 16px !important; padding: 24px !important; border: 1px solid rgba(255,255,255,.07) !important; background: rgba(255,255,255,.02) !important; cursor: pointer !important; transition: all .3s !important; text-align: center !important; display: block !important; }
-  #rr-root .rr-mini-card.active { border-color: #FF2D00 !important; background: rgba(255,45,0,.06) !important; }
   #rr-root .rr-steps-wrap { max-width: 800px !important; margin: 0 auto !important; }
   #rr-root .rr-step { display: flex !important; gap: 32px !important; margin-bottom: 8px !important; }
   #rr-root .rr-step-num-wrap { display: flex !important; flex-direction: column !important; align-items: center !important; flex-shrink: 0 !important; }
@@ -110,6 +119,7 @@
     #rr-hero { padding: 100px 20px 60px !important; }
     #rr-root .rr-section { padding: 70px 20px !important; }
     #rr-root .rr-pack-detail { grid-template-columns: 1fr !important; }
+    #rr-root .rr-pack-switcher { grid-template-columns: 1fr !important; }
     #rr-root .rr-solution-banner { flex-direction: column !important; padding: 28px 24px !important; }
     #rr-footer { flex-direction: column !important; align-items: center !important; text-align: center !important; padding: 32px 20px !important; }
     #rr-root .rr-stats { gap: 28px !important; }
@@ -141,7 +151,7 @@
     <div class="rr-hero-inner">
       <div class="rr-fade"><span class="rr-badge">Agence Marketing Systémique</span></div>
       <div class="rr-fade d1" style="margin:32px 0 24px">
-        <div class="rr-rocket-anim" style="margin-bottom:16px">🚀</div>
+        <div class="rr-rocket-anim" style="font-size:80px;margin-bottom:16px">🚀</div>
         <h1 class="rr-h1">
           <span class="rr-glow" style="color:#FF2D00">Pas</span> <span>un service.</span><br>
           <span class="rr-shimmer">Un système.</span>
@@ -149,7 +159,7 @@
       </div>
       <div class="rr-fade d2">
         <p style="font-size:clamp(16px,2vw,20px);color:rgba(240,238,232,.6);line-height:1.7;max-width:640px;margin:0 auto 40px">
-          Arrêtez de payer pour des briques qui ne s’assemblent pas.
+          Arrêtez de payer pour des briques qui ne s'assemblent pas.
           On construit votre machine à clients — site, SEO, pubs, réseaux —
           <strong style="color:#F0EEE8">cohérente, connectée, mesurable.</strong>
         </p>
@@ -179,12 +189,12 @@
         <div class="rr-card rr-fade d1">
           <div style="font-size:36px;margin-bottom:20px">⚙️</div>
           <h3 style="font-size:18px;font-weight:700;margin-bottom:12px">Des services qui ne se parlent pas</h3>
-          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Un SEO sans site optimisé, c’est un moteur sans carburant. Un site sans trafic, c’est une vitrine dans le désert.</p>
+          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Un SEO sans site optimisé, c'est un moteur sans carburant. Un site sans trafic, c'est une vitrine dans le désert.</p>
         </div>
         <div class="rr-card rr-fade d2">
           <div style="font-size:36px;margin-bottom:20px">💸</div>
           <h3 style="font-size:18px;font-weight:700;margin-bottom:12px">Plusieurs prestataires = chaos</h3>
-          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Freelance pour le site, agence pour les pubs, consultant pour l’Insta… personne ne coordonne. Vous payez tout, vous obtenez rien.</p>
+          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Freelance pour le site, agence pour les pubs, consultant pour l'Insta… personne ne coordonne. Vous payez tout, vous obtenez rien.</p>
         </div>
         <div class="rr-card rr-fade d3">
           <div style="font-size:36px;margin-bottom:20px">📊</div>
@@ -208,16 +218,31 @@
         <h2 class="rr-h2">Choisissez votre<br><span style="color:#FF2D00">niveau de croissance.</span></h2>
         <p style="color:rgba(240,238,232,.5);margin-top:16px;font-size:15px">Sans engagement. Pause ou résiliation quand vous voulez.</p>
       </div>
-      <div class="rr-tabs rr-fade d1">
-        <button class="rr-tab" data-pack="lancement" onclick="selectPack('lancement')">DÉMARRER</button>
-        <button class="rr-tab active" data-pack="visibilite" onclick="selectPack('visibilite')">LE PLUS POPULAIRE</button>
-        <button class="rr-tab" data-pack="domination" onclick="selectPack('domination')">CROISSANCE MAX</button>
+      <div class="rr-pack-switcher rr-fade d1">
+        <div class="rr-pack-tab" data-pack="lancement" onclick="selectPack('lancement')">
+          <div class="rr-pack-tab-badge">&nbsp;</div>
+          <div class="rr-pack-tab-name">Lancement</div>
+          <div class="rr-pack-tab-price">149 €<em>HT</em></div>
+          <div class="rr-pack-tab-sub">/ mois · Pour démarrer</div>
+        </div>
+        <div class="rr-pack-tab active" data-pack="visibilite" onclick="selectPack('visibilite')">
+          <div class="rr-pack-tab-badge">⭐ Le plus populaire</div>
+          <div class="rr-pack-tab-name">Visibilité</div>
+          <div class="rr-pack-tab-price">299 €<em>HT</em></div>
+          <div class="rr-pack-tab-sub">/ mois · Pour croître</div>
+        </div>
+        <div class="rr-pack-tab" data-pack="domination" onclick="selectPack('domination')">
+          <div class="rr-pack-tab-badge">&nbsp;</div>
+          <div class="rr-pack-tab-name">Domination</div>
+          <div class="rr-pack-tab-price">499 €<em>HT</em></div>
+          <div class="rr-pack-tab-sub">/ mois · Croissance max</div>
+        </div>
       </div>
       <div id="pack-lancement" class="rr-pack-detail rr-pack-normal rr-fade d2" style="display:none">
         <div>
           <h3 class="rr-pack-name" style="color:#FF6B35">Système<br>Lancement</h3>
           <p style="color:rgba(240,238,232,.65);font-size:16px;line-height:1.6;margin-bottom:32px">Votre présence pro en ligne, clé en main</p>
-          <div style="margin-bottom:16px"><span class="rr-pack-price-big" style="color:#FF6B35">149€</span><span style="color:rgba(240,238,232,.4);font-size:16px"> / mois HT</span></div>
+          <div style="margin-bottom:16px"><span class="rr-pack-price-big" style="color:#FF6B35">149 €</span><span style="color:rgba(240,238,232,.4);font-size:16px"> / mois HT</span></div>
           <div style="font-size:13px;color:rgba(240,238,232,.4);margin-bottom:32px">💡 Pour : Créateurs, freelances, artisans qui démarrent</div>
           <button class="rr-btn" style="font-size:16px;padding:18px 40px;background:#FF6B35" onclick="window.location.href='mailto:ludovic.freelance@gmail.com'">Lancer mon projet →</button>
         </div>
@@ -236,7 +261,7 @@
           <span class="rr-badge" style="margin-bottom:20px;display:inline-block">⭐ Le plus populaire</span>
           <h3 class="rr-pack-name" style="color:#FF2D00">Système<br>Visibilité</h3>
           <p style="color:rgba(240,238,232,.65);font-size:16px;line-height:1.6;margin-bottom:32px">Soyez trouvé avant vos concurrents, partout</p>
-          <div style="margin-bottom:16px"><span class="rr-pack-price-big" style="color:#FF2D00">299€</span><span style="color:rgba(240,238,232,.4);font-size:16px"> / mois HT</span></div>
+          <div style="margin-bottom:16px"><span class="rr-pack-price-big" style="color:#FF2D00">299 €</span><span style="color:rgba(240,238,232,.4);font-size:16px"> / mois HT</span></div>
           <div style="font-size:13px;color:rgba(240,238,232,.4);margin-bottom:32px">💡 Pour : Commerçants, PME, indépendants en croissance</div>
           <button class="rr-btn" style="font-size:16px;padding:18px 40px;background:#FF2D00" onclick="window.location.href='mailto:ludovic.freelance@gmail.com'">Devenir visible →</button>
         </div>
@@ -254,7 +279,7 @@
         <div>
           <h3 class="rr-pack-name" style="color:#FFB800">Système<br>Domination</h3>
           <p style="color:rgba(240,238,232,.65);font-size:16px;line-height:1.6;margin-bottom:32px">Écrasez la concurrence. Dominez votre marché.</p>
-          <div style="margin-bottom:16px"><span class="rr-pack-price-big" style="color:#FFB800">499€</span><span style="color:rgba(240,238,232,.4);font-size:16px"> / mois HT</span></div>
+          <div style="margin-bottom:16px"><span class="rr-pack-price-big" style="color:#FFB800">499 €</span><span style="color:rgba(240,238,232,.4);font-size:16px"> / mois HT</span></div>
           <div style="font-size:13px;color:rgba(240,238,232,.4);margin-bottom:32px">💡 Pour : Startups, PME ambitieuses, multi-sites</div>
           <button class="rr-btn" style="font-size:16px;padding:18px 40px;background:#FFB800;color:#08080E" onclick="window.location.href='mailto:ludovic.freelance@gmail.com'">Dominer mon marché →</button>
         </div>
@@ -266,23 +291,6 @@
           <div class="rr-service-check"><span style="color:#FFB800;font-size:16px;flex-shrink:0">✓</span><span>Tunnel de conversion optimisé</span></div>
           <div class="rr-service-check"><span style="color:#FFB800;font-size:16px;flex-shrink:0">✓</span><span>Reporting temps réel</span></div>
           <div class="rr-service-check"><span style="color:#FFB800;font-size:16px;flex-shrink:0">✓</span><span>Stratège marketing dédié</span></div>
-        </div>
-      </div>
-      <div class="rr-mini-cards rr-fade d3">
-        <div class="rr-mini-card" id="mini-lancement" onclick="selectPack('lancement')">
-          <div style="font-family:'Bebas Neue',cursive;font-size:28px;color:#FF6B35">149€</div>
-          <div style="font-size:11px;color:rgba(240,238,232,.4);margin-top:4px">/ mois HT</div>
-          <div style="font-size:13px;font-weight:600;margin-top:10px;color:rgba(240,238,232,.6)">Système Lancement</div>
-        </div>
-        <div class="rr-mini-card active" id="mini-visibilite" onclick="selectPack('visibilite')">
-          <div style="font-family:'Bebas Neue',cursive;font-size:28px;color:#FF2D00">299€</div>
-          <div style="font-size:11px;color:rgba(240,238,232,.4);margin-top:4px">/ mois HT</div>
-          <div style="font-size:13px;font-weight:600;margin-top:10px;color:#F0EEE8">Système Visibilité</div>
-        </div>
-        <div class="rr-mini-card" id="mini-domination" onclick="selectPack('domination')">
-          <div style="font-family:'Bebas Neue',cursive;font-size:28px;color:#FFB800">499€</div>
-          <div style="font-size:11px;color:rgba(240,238,232,.4);margin-top:4px">/ mois HT</div>
-          <div style="font-size:13px;font-weight:600;margin-top:10px;color:rgba(240,238,232,.6)">Système Domination</div>
         </div>
       </div>
     </div>
@@ -307,7 +315,7 @@
       </div>
       <div class="rr-step rr-fade d4">
         <div class="rr-step-num-wrap"><div class="rr-step-num">04</div></div>
-        <div style="padding-top:12px"><h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Optimisation Continue</h3><p style="color:rgba(240,238,232,.55);font-size:15px;line-height:1.7">Chaque mois, on analyse, on ajuste, on performe. Votre système s’améliore avec le temps.</p></div>
+        <div style="padding-top:12px"><h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Optimisation Continue</h3><p style="color:rgba(240,238,232,.55);font-size:15px;line-height:1.7">Chaque mois, on analyse, on ajuste, on performe. Votre système s'améliore avec le temps.</p></div>
       </div>
     </div>
   </section>
@@ -320,17 +328,17 @@
       <div class="rr-testi-grid">
         <div class="rr-card rr-fade d1">
           <div class="rr-stars">★★★★★</div>
-          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">“Mon compte a vraiment décollé. Ludovic s’investit à 200%, donne des conseils actionnables et livre ce qu’il promet. Je continue.”</p>
+          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Mon compte a vraiment décollé. Ludovic s'investit à 200%, donne des conseils actionnables et livre ce qu'il promet. Je continue."</p>
           <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">Y</div><div><div style="font-weight:700;font-size:14px">YsabelleRose</div><div style="color:rgba(240,238,232,.4);font-size:12px">Coach &amp; Créatrice de contenu</div></div></div>
         </div>
         <div class="rr-card rr-fade d2">
           <div class="rr-stars">★★★★★</div>
-          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">“Une fois de plus, les conseils sont inestimables et les résultats parlent d’eux-mêmes. On se reverra bientôt.”</p>
+          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Une fois de plus, les conseils sont inestimables et les résultats parlent d'eux-mêmes. On se reverra bientôt."</p>
           <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">P</div><div><div style="font-weight:700;font-size:14px">Philippe C.</div><div style="color:rgba(240,238,232,.4);font-size:12px">Entrepreneur</div></div></div>
         </div>
         <div class="rr-card rr-fade d3">
           <div class="rr-stars">★★★★★</div>
-          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">“Ludovic m’a aidée à identifier mes axes d’amélioration et a proposé un suivi pour évaluer les résultats. Je recommande vivement.”</p>
+          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Ludovic m'a aidée à identifier mes axes d'amélioration et a proposé un suivi pour évaluer les résultats. Je recommande vivement."</p>
           <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">K</div><div><div style="font-weight:700;font-size:14px">KFati B.</div><div style="color:rgba(240,238,232,.4);font-size:12px">Indépendante</div></div></div>
         </div>
       </div>
@@ -368,12 +376,10 @@ function selectPack(id) {
   const packs = ['lancement','visibilite','domination'];
   packs.forEach(p => {
     document.getElementById('pack-' + p).style.display = p === id ? 'grid' : 'none';
-    document.querySelector('[data-pack="' + p + '"]').classList.toggle('active', p === id);
-    const mini = document.getElementById('mini-' + p);
-    mini.classList.toggle('active', p === id);
-    mini.querySelector('div:last-child').style.color = p === id ? '#F0EEE8' : 'rgba(240,238,232,.6)';
+    document.querySelector('.rr-pack-tab[data-pack="' + p + '"]').classList.toggle('active', p === id);
   });
 }
+selectPack('visibilite');
 window.addEventListener('scroll', () => {
   document.getElementById('rr-header').classList.toggle('solid', window.scrollY > 60);
 });
