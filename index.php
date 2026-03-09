@@ -6,6 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  html, body { background: #08080E !important; margin: 0 !important; padding: 0 !important; }
   #rr-root, #rr-root * { all: revert; }
   #rr-root *, #rr-root *::before, #rr-root *::after {
     box-sizing: border-box !important; margin: 0 !important; padding: 0 !important;
@@ -197,7 +198,7 @@
       </div>
       <div class="rr-fade d2">
         <p style="font-size:clamp(16px,2vw,20px);color:rgba(240,238,232,.6);line-height:1.7;max-width:640px;margin:0 auto 40px">
-          Arrêtez de payer pour des briques qui ne s’assemblent pas.
+          Arrêtez de payer pour des briques qui ne s'assemblent pas.
           On construit votre machine à clients — site, SEO, pubs, réseaux —
           <strong style="color:#F0EEE8">cohérente, connectée, mesurable.</strong>
         </p>
@@ -227,12 +228,12 @@
         <div class="rr-card rr-fade d1">
           <div style="font-size:36px;margin-bottom:20px">⚙️</div>
           <h3 style="font-size:18px;font-weight:700;margin-bottom:12px">Des services qui ne se parlent pas</h3>
-          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Un SEO sans site optimisé, c’est un moteur sans carburant. Un site sans trafic, c’est une vitrine dans le désert.</p>
+          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Un SEO sans site optimisé, c'est un moteur sans carburant. Un site sans trafic, c'est une vitrine dans le désert.</p>
         </div>
         <div class="rr-card rr-fade d2">
           <div style="font-size:36px;margin-bottom:20px">💸</div>
           <h3 style="font-size:18px;font-weight:700;margin-bottom:12px">Plusieurs prestataires = chaos</h3>
-          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Freelance pour le site, agence pour les pubs, consultant pour l’Insta… personne ne coordonne. Vous payez tout, vous obtenez rien.</p>
+          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Freelance pour le site, agence pour les pubs, consultant pour l'Insta… personne ne coordonne. Vous payez tout, vous obtenez rien.</p>
         </div>
         <div class="rr-card rr-fade d3">
           <div style="font-size:36px;margin-bottom:20px">📊</div>
@@ -367,7 +368,7 @@
       </div>
       <div class="rr-step rr-fade d4">
         <div class="rr-step-num-wrap"><div class="rr-step-num">04</div></div>
-        <div style="padding-top:12px"><h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Optimisation Continue</h3><p style="color:rgba(240,238,232,.55);font-size:15px;line-height:1.7">Chaque mois, on analyse, on ajuste, on performe. Votre système s’améliore avec le temps.</p></div>
+        <div style="padding-top:12px"><h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Optimisation Continue</h3><p style="color:rgba(240,238,232,.55);font-size:15px;line-height:1.7">Chaque mois, on analyse, on ajuste, on performe. Votre système s'améliore avec le temps.</p></div>
       </div>
     </div>
   </section>
@@ -380,17 +381,17 @@
       <div class="rr-testi-grid">
         <div class="rr-card rr-fade d1">
           <div class="rr-stars">★★★★★</div>
-          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Mon compte a vraiment décollé. Ludovic s’investit à 200%, donne des conseils actionnables et livre ce qu’il promet. Je continue."</p>
+          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Mon compte a vraiment décollé. Ludovic s'investit à 200%, donne des conseils actionnables et livre ce qu'il promet. Je continue."</p>
           <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">Y</div><div><div style="font-weight:700;font-size:14px">YsabelleRose</div><div style="color:rgba(240,238,232,.4);font-size:12px">Coach & Créatrice de contenu</div></div></div>
         </div>
         <div class="rr-card rr-fade d2">
           <div class="rr-stars">★★★★★</div>
-          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Une fois de plus, les conseils sont inestimables et les résultats parlent d’eux-mêmes. On se reverra bientôt."</p>
+          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Une fois de plus, les conseils sont inestimables et les résultats parlent d'eux-mêmes. On se reverra bientôt."</p>
           <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">P</div><div><div style="font-weight:700;font-size:14px">Philippe C.</div><div style="color:rgba(240,238,232,.4);font-size:12px">Entrepreneur</div></div></div>
         </div>
         <div class="rr-card rr-fade d3">
           <div class="rr-stars">★★★★★</div>
-          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Ludovic m’a aidée à identifier mes axes d’amélioration et a proposé un suivi pour évaluer les résultats. Je recommande vivement."</p>
+          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Ludovic m'a aidée à identifier mes axes d'amélioration et a proposé un suivi pour évaluer les résultats. Je recommande vivement."</p>
           <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">K</div><div><div style="font-weight:700;font-size:14px">KFati B.</div><div style="color:rgba(240,238,232,.4);font-size:12px">Indépendante</div></div></div>
         </div>
       </div>
@@ -439,11 +440,9 @@ selectPack('visibilite');
 window.addEventListener('scroll', () => {
   document.getElementById('rr-header').classList.toggle('solid', window.scrollY > 60);
 });
-// Hero elements: appear immediately with stagger
 document.querySelectorAll('#rr-hero .rr-fade').forEach((el, i) => {
   setTimeout(() => el.classList.add('visible'), 100 + i * 200);
 });
-// All other sections: observe on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
@@ -453,4 +452,4 @@ document.querySelectorAll('.rr-fade').forEach(el => {
 </script>
 <?php wp_footer(); ?>
 </body>
-  </html>
+</html>
