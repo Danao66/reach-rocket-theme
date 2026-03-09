@@ -203,7 +203,7 @@
           <strong style="color:#F0EEE8">cohérente, connectée, mesurable.</strong>
         </p>
       </div>
-      <div class="rr-fade d3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <div class="rr-fade d3" style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:8px">
         <button class="rr-btn" style="font-size:16px;padding:18px 40px" onclick="document.getElementById('rr-systemes').scrollIntoView({behavior:'smooth'})">Voir les systèmes →</button>
         <button class="rr-btn-outline" onclick="window.location.href='tel:+33664487401'">📞 Appel découverte gratuit</button>
       </div>
