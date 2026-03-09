@@ -93,7 +93,8 @@
   #rr-root .rr-pack-tab-price em { font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 13px !important; font-style: normal !important; color: rgba(240,238,232,.4) !important; margin-left: 2px !important; }
   #rr-root .rr-pack-tab-sub { font-size: 11px !important; color: rgba(240,238,232,.4) !important; text-transform: uppercase !important; letter-spacing: .08em !important; margin-top: 8px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; }
   /* Pack detail cards */
-  #rr-root .rr-pack-detail { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 32px !important; border-radius: 24px !important; padding: 48px !important; }
+  #rr-root .rr-pack-detail { display: none !important; grid-template-columns: 1fr 1fr !important; gap: 32px !important; border-radius: 24px !important; padding: 48px !important; }
+  #rr-root .rr-pack-detail.active { display: grid !important; }
   #rr-root .rr-pack-highlight { background: linear-gradient(135deg,rgba(255,45,0,.1),rgba(255,107,53,.05)) !important; border: 1px solid rgba(255,45,0,.3) !important; }
   #rr-root .rr-pack-normal { background: rgba(255,255,255,.03) !important; border: 1px solid rgba(255,255,255,.08) !important; }
   #rr-root .rr-pack-name { font-family: 'Bebas Neue', cursive !important; font-size: 52px !important; letter-spacing: .05em !important; line-height: 1 !important; margin-bottom: 16px !important; }
@@ -130,7 +131,7 @@
     #rr-menu-btn { display: flex !important; }
     #rr-hero { padding: 100px 20px 60px !important; }
     #rr-root .rr-section { padding: 70px 20px !important; }
-    #rr-root .rr-pack-detail { grid-template-columns: 1fr !important; }
+    #rr-root .rr-pack-detail.active { grid-template-columns: 1fr !important; }
     #rr-root .rr-pack-switcher { grid-template-columns: 1fr !important; }
     #rr-root .rr-solution-banner { flex-direction: column !important; padding: 28px 24px !important; }
     #rr-footer { flex-direction: column !important; align-items: center !important; text-align: center !important; padding: 32px 20px !important; }
@@ -263,7 +264,7 @@
           <div class="rr-pack-tab-sub">/ mois · Croissance max</div>
         </div>
       </div>
-      <div id="pack-lancement" class="rr-pack-detail rr-pack-normal rr-fade d2" style="display:none">
+      <div id="pack-lancement" class="rr-pack-detail rr-pack-normal rr-fade d2">
         <div>
           <h3 class="rr-pack-name" style="color:#FF6B35">Système<br>Lancement</h3>
           <p style="color:rgba(240,238,232,.65);font-size:16px;line-height:1.6;margin-bottom:32px">Votre présence pro en ligne, clé en main</p>
@@ -281,7 +282,7 @@
           <div class="rr-service-check"><span style="color:#FF6B35;font-size:16px;flex-shrink:0">✓</span><span>Rapport mensuel</span></div>
         </div>
       </div>
-      <div id="pack-visibilite" class="rr-pack-detail rr-pack-highlight rr-fade d2">
+      <div id="pack-visibilite" class="rr-pack-detail rr-pack-highlight rr-fade d2 active">
         <div>
           <span class="rr-badge" style="margin-bottom:20px;display:inline-block">⭐ Le plus populaire</span>
           <h3 class="rr-pack-name" style="color:#FF2D00">Système<br>Visibilité</h3>
@@ -300,7 +301,7 @@
           <div class="rr-service-check"><span style="color:#FF2D00;font-size:16px;flex-shrink:0">✓</span><span>Consultant dédié</span></div>
         </div>
       </div>
-      <div id="pack-domination" class="rr-pack-detail rr-pack-normal rr-fade d2" style="display:none">
+      <div id="pack-domination" class="rr-pack-detail rr-pack-normal rr-fade d2">
         <div>
           <h3 class="rr-pack-name" style="color:#FFB800">Système<br>Domination</h3>
           <p style="color:rgba(240,238,232,.65);font-size:16px;line-height:1.6;margin-bottom:32px">Écrasez la concurrence. Dominez votre marché.</p>
@@ -316,6 +317,26 @@
           <div class="rr-service-check"><span style="color:#FFB800;font-size:16px;flex-shrink:0">✓</span><span>Tunnel de conversion optimisé</span></div>
           <div class="rr-service-check"><span style="color:#FFB800;font-size:16px;flex-shrink:0">✓</span><span>Reporting temps réel</span></div>
           <div class="rr-service-check"><span style="color:#FFB800;font-size:16px;flex-shrink:0">✓</span><span>Stratège marketing dédié</span></div>
+        </div>
+      </div>
+      <div class="rr-pack-switcher rr-fade d3" style="margin-top:24px">
+        <div class="rr-pack-tab" data-pack="lancement" onclick="selectPack('lancement')">
+          <div class="rr-pack-tab-badge">&nbsp;</div>
+          <div class="rr-pack-tab-name">Lancement</div>
+          <div class="rr-pack-tab-price">149 €<em>HT</em></div>
+          <div class="rr-pack-tab-sub">/ mois · Pour démarrer</div>
+        </div>
+        <div class="rr-pack-tab active" data-pack="visibilite" onclick="selectPack('visibilite')">
+          <div class="rr-pack-tab-badge">⭐ Le plus populaire</div>
+          <div class="rr-pack-tab-name">Visibilité</div>
+          <div class="rr-pack-tab-price">299 €<em>HT</em></div>
+          <div class="rr-pack-tab-sub">/ mois · Pour croître</div>
+        </div>
+        <div class="rr-pack-tab" data-pack="domination" onclick="selectPack('domination')">
+          <div class="rr-pack-tab-badge">&nbsp;</div>
+          <div class="rr-pack-tab-name">Domination</div>
+          <div class="rr-pack-tab-price">499 €<em>HT</em></div>
+          <div class="rr-pack-tab-sub">/ mois · Croissance max</div>
         </div>
       </div>
     </div>
@@ -403,8 +424,8 @@ function toggleMenu() {
 function selectPack(id) {
   const packs = ['lancement','visibilite','domination'];
   packs.forEach(p => {
-    document.getElementById('pack-' + p).style.display = p === id ? 'grid' : 'none';
-    document.querySelector('.rr-pack-tab[data-pack="' + p + '"]').classList.toggle('active', p === id);
+    document.getElementById('pack-' + p).classList.toggle('active', p === id);
+    document.querySelectorAll('.rr-pack-tab[data-pack="' + p + '"]').forEach(tab => tab.classList.toggle('active', p === id));
   });
 }
 selectPack('visibilite');
