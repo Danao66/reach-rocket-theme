@@ -77,10 +77,10 @@
   #rr-root .rr-card { background: rgba(255,255,255,.03) !important; border: 1px solid rgba(255,255,255,.08) !important; border-radius: 20px !important; padding: 36px 32px !important; transition: all .3s !important; display: block !important; }
   #rr-root .rr-card:hover { border-color: rgba(255,255,255,.15) !important; background: rgba(255,255,255,.05) !important; }
   #rr-root .rr-solution-banner { margin-top: 56px !important; background: linear-gradient(135deg,rgba(255,45,0,.1),rgba(255,107,53,.05)) !important; border: 1px solid rgba(255,45,0,.25) !important; border-radius: 20px !important; padding: 40px 48px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; flex-wrap: wrap !important; gap: 24px !important; }
-  /* Pack switcher — grandes cartes (bas) */
+  /* Pack switcher */
   #rr-root .rr-pack-switcher { display: grid !important; grid-template-columns: repeat(3,1fr) !important; gap: 16px !important; margin-top: 40px !important; }
-  #rr-root .rr-pack-tab { background: rgba(255,255,255,.03) !important; border: 1.5px solid rgba(255,255,255,.1) !important; border-radius: 20px !important; padding: 28px 20px !important; cursor: pointer !important; transition: all .3s !important; text-align: center !important; position: relative !important; display: block !important; }
-  #rr-root .rr-pack-tab:hover:not(.active) { border-color: rgba(255,255,255,.22) !important; background: rgba(255,255,255,.05) !important; }
+  #rr-root .rr-pack-tab { background: rgba(255,255,255,.03) !important; border: 1.5px solid transparent !important; border-radius: 20px !important; padding: 28px 20px !important; cursor: pointer !important; transition: all .3s !important; text-align: center !important; position: relative !important; display: block !important; }
+  #rr-root .rr-pack-tab:hover:not(.active) { border-color: transparent !important; background: rgba(255,255,255,.05) !important; }
   #rr-root .rr-pack-tab[data-pack="lancement"].active { box-shadow: 0 0 0 2px #FF6B35 !important; background: rgba(255,107,53,.07) !important; border-color: transparent !important; }
   #rr-root .rr-pack-tab[data-pack="visibilite"].active { box-shadow: 0 0 0 2px #FF2D00 !important; background: rgba(255,45,0,.07) !important; border-color: transparent !important; }
   #rr-root .rr-pack-tab[data-pack="domination"].active { box-shadow: 0 0 0 2px #FFB800 !important; background: rgba(255,184,0,.07) !important; border-color: transparent !important; }
@@ -92,10 +92,10 @@
   #rr-root .rr-pack-tab-price { font-family: 'Bebas Neue', cursive !important; font-size: 40px !important; color: #F0EEE8 !important; line-height: 1 !important; }
   #rr-root .rr-pack-tab-price em { font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 13px !important; font-style: normal !important; color: rgba(240,238,232,.4) !important; margin-left: 2px !important; }
   #rr-root .rr-pack-tab-sub { font-size: 11px !important; color: rgba(240,238,232,.4) !important; text-transform: uppercase !important; letter-spacing: .08em !important; margin-top: 8px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; }
-  /* Pack switcher — pills compactes (haut) */
+  /* Top pack switcher — compact pills */
   #rr-root .rr-pack-switcher-pills { display: flex !important; justify-content: center !important; gap: 12px !important; margin-bottom: 40px !important; flex-wrap: wrap !important; }
-  #rr-root .rr-pack-pill { background: rgba(255,255,255,.04) !important; border: 1.5px solid rgba(255,255,255,.1) !important; border-radius: 50px !important; padding: 12px 28px !important; cursor: pointer !important; transition: all .3s !important; text-align: center !important; display: inline-flex !important; align-items: center !important; gap: 10px !important; }
-  #rr-root .rr-pack-pill:hover:not(.active) { border-color: rgba(255,255,255,.25) !important; background: rgba(255,255,255,.07) !important; }
+  #rr-root .rr-pack-pill { background: rgba(255,255,255,.04) !important; border: 1.5px solid transparent !important; border-radius: 50px !important; padding: 12px 28px !important; cursor: pointer !important; transition: all .3s !important; text-align: center !important; display: inline-flex !important; align-items: center !important; gap: 10px !important; }
+  #rr-root .rr-pack-pill:hover:not(.active) { border-color: transparent !important; background: rgba(255,255,255,.07) !important; }
   #rr-root .rr-pack-pill-name { font-family: 'Bebas Neue', cursive !important; font-size: 18px !important; letter-spacing: .05em !important; line-height: 1 !important; }
   #rr-root .rr-pack-pill-price { font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 12px !important; font-weight: 600 !important; color: rgba(240,238,232,.4) !important; }
   #rr-root .rr-pack-pill[data-pack="lancement"] .rr-pack-pill-name { color: #FF6B35 !important; }
@@ -197,7 +197,7 @@
       </div>
       <div class="rr-fade d2">
         <p style="font-size:clamp(16px,2vw,20px);color:rgba(240,238,232,.6);line-height:1.7;max-width:640px;margin:0 auto 40px">
-          Arrêtez de payer pour des briques qui ne s'assemblent pas.
+          Arrêtez de payer pour des briques qui ne s’assemblent pas.
           On construit votre machine à clients — site, SEO, pubs, réseaux —
           <strong style="color:#F0EEE8">cohérente, connectée, mesurable.</strong>
         </p>
@@ -227,12 +227,12 @@
         <div class="rr-card rr-fade d1">
           <div style="font-size:36px;margin-bottom:20px">⚙️</div>
           <h3 style="font-size:18px;font-weight:700;margin-bottom:12px">Des services qui ne se parlent pas</h3>
-          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Un SEO sans site optimisé, c'est un moteur sans carburant. Un site sans trafic, c'est une vitrine dans le désert.</p>
+          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Un SEO sans site optimisé, c’est un moteur sans carburant. Un site sans trafic, c’est une vitrine dans le désert.</p>
         </div>
         <div class="rr-card rr-fade d2">
           <div style="font-size:36px;margin-bottom:20px">💸</div>
           <h3 style="font-size:18px;font-weight:700;margin-bottom:12px">Plusieurs prestataires = chaos</h3>
-          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Freelance pour le site, agence pour les pubs, consultant pour l'Insta… personne ne coordonne. Vous payez tout, vous obtenez rien.</p>
+          <p style="font-size:14px;color:rgba(240,238,232,.55);line-height:1.7">Freelance pour le site, agence pour les pubs, consultant pour l’Insta… personne ne coordonne. Vous payez tout, vous obtenez rien.</p>
         </div>
         <div class="rr-card rr-fade d3">
           <div style="font-size:36px;margin-bottom:20px">📊</div>
@@ -367,7 +367,7 @@
       </div>
       <div class="rr-step rr-fade d4">
         <div class="rr-step-num-wrap"><div class="rr-step-num">04</div></div>
-        <div style="padding-top:12px"><h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Optimisation Continue</h3><p style="color:rgba(240,238,232,.55);font-size:15px;line-height:1.7">Chaque mois, on analyse, on ajuste, on performe. Votre système s'améliore avec le temps.</p></div>
+        <div style="padding-top:12px"><h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Optimisation Continue</h3><p style="color:rgba(240,238,232,.55);font-size:15px;line-height:1.7">Chaque mois, on analyse, on ajuste, on performe. Votre système s’améliore avec le temps.</p></div>
       </div>
     </div>
   </section>
@@ -380,17 +380,17 @@
       <div class="rr-testi-grid">
         <div class="rr-card rr-fade d1">
           <div class="rr-stars">★★★★★</div>
-          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Mon compte a vraiment décollé. Ludovic s'investit à 200%, donne des conseils actionnables et livre ce qu'il promet. Je continue."</p>
+          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Mon compte a vraiment décollé. Ludovic s’investit à 200%, donne des conseils actionnables et livre ce qu’il promet. Je continue."</p>
           <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">Y</div><div><div style="font-weight:700;font-size:14px">YsabelleRose</div><div style="color:rgba(240,238,232,.4);font-size:12px">Coach & Créatrice de contenu</div></div></div>
         </div>
         <div class="rr-card rr-fade d2">
           <div class="rr-stars">★★★★★</div>
-          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Une fois de plus, les conseils sont inestimables et les résultats parlent d'eux-mêmes. On se reverra bientôt."</p>
+          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Une fois de plus, les conseils sont inestimables et les résultats parlent d’eux-mêmes. On se reverra bientôt."</p>
           <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">P</div><div><div style="font-weight:700;font-size:14px">Philippe C.</div><div style="color:rgba(240,238,232,.4);font-size:12px">Entrepreneur</div></div></div>
         </div>
         <div class="rr-card rr-fade d3">
           <div class="rr-stars">★★★★★</div>
-          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Ludovic m'a aidée à identifier mes axes d'amélioration et a proposé un suivi pour évaluer les résultats. Je recommande vivement."</p>
+          <p style="color:rgba(240,238,232,.75);font-size:15px;line-height:1.7;margin:20px 0 24px;font-style:italic">"Ludovic m’a aidée à identifier mes axes d’amélioration et a proposé un suivi pour évaluer les résultats. Je recommande vivement."</p>
           <div style="display:flex;align-items:center;gap:12px"><div class="rr-avatar">K</div><div><div style="font-weight:700;font-size:14px">KFati B.</div><div style="color:rgba(240,238,232,.4);font-size:12px">Indépendante</div></div></div>
         </div>
       </div>
@@ -453,4 +453,4 @@ document.querySelectorAll('.rr-fade').forEach(el => {
 </script>
 <?php wp_footer(); ?>
 </body>
-</html>
+  </html>
