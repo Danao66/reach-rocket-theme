@@ -77,8 +77,8 @@
   #rr-root .rr-card { background: rgba(255,255,255,.03) !important; border: 1px solid rgba(255,255,255,.08) !important; border-radius: 20px !important; padding: 36px 32px !important; transition: all .3s !important; display: block !important; }
   #rr-root .rr-card:hover { border-color: rgba(255,255,255,.15) !important; background: rgba(255,255,255,.05) !important; }
   #rr-root .rr-solution-banner { margin-top: 56px !important; background: linear-gradient(135deg,rgba(255,45,0,.1),rgba(255,107,53,.05)) !important; border: 1px solid rgba(255,45,0,.25) !important; border-radius: 20px !important; padding: 40px 48px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; flex-wrap: wrap !important; gap: 24px !important; }
-  /* Pack switcher */
-  #rr-root .rr-pack-switcher { display: grid !important; grid-template-columns: repeat(3,1fr) !important; gap: 16px !important; margin-bottom: 40px !important; }
+  /* Pack switcher — grandes cartes (bas) */
+  #rr-root .rr-pack-switcher { display: grid !important; grid-template-columns: repeat(3,1fr) !important; gap: 16px !important; margin-top: 40px !important; }
   #rr-root .rr-pack-tab { background: rgba(255,255,255,.03) !important; border: 1.5px solid rgba(255,255,255,.1) !important; border-radius: 20px !important; padding: 28px 20px !important; cursor: pointer !important; transition: all .3s !important; text-align: center !important; position: relative !important; display: block !important; }
   #rr-root .rr-pack-tab:hover:not(.active) { border-color: rgba(255,255,255,.22) !important; background: rgba(255,255,255,.05) !important; }
   #rr-root .rr-pack-tab[data-pack="lancement"].active { box-shadow: 0 0 0 2px #FF6B35 !important; background: rgba(255,107,53,.07) !important; border-color: transparent !important; }
@@ -92,8 +92,8 @@
   #rr-root .rr-pack-tab-price { font-family: 'Bebas Neue', cursive !important; font-size: 40px !important; color: #F0EEE8 !important; line-height: 1 !important; }
   #rr-root .rr-pack-tab-price em { font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 13px !important; font-style: normal !important; color: rgba(240,238,232,.4) !important; margin-left: 2px !important; }
   #rr-root .rr-pack-tab-sub { font-size: 11px !important; color: rgba(240,238,232,.4) !important; text-transform: uppercase !important; letter-spacing: .08em !important; margin-top: 8px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; }
-  /* Bottom pack switcher — compact pills */
-  #rr-root .rr-pack-switcher-pills { display: flex !important; justify-content: center !important; gap: 12px !important; margin-top: 32px !important; flex-wrap: wrap !important; }
+  /* Pack switcher — pills compactes (haut) */
+  #rr-root .rr-pack-switcher-pills { display: flex !important; justify-content: center !important; gap: 12px !important; margin-bottom: 40px !important; flex-wrap: wrap !important; }
   #rr-root .rr-pack-pill { background: rgba(255,255,255,.04) !important; border: 1.5px solid rgba(255,255,255,.1) !important; border-radius: 50px !important; padding: 12px 28px !important; cursor: pointer !important; transition: all .3s !important; text-align: center !important; display: inline-flex !important; align-items: center !important; gap: 10px !important; }
   #rr-root .rr-pack-pill:hover:not(.active) { border-color: rgba(255,255,255,.25) !important; background: rgba(255,255,255,.07) !important; }
   #rr-root .rr-pack-pill-name { font-family: 'Bebas Neue', cursive !important; font-size: 18px !important; letter-spacing: .05em !important; line-height: 1 !important; }
@@ -256,24 +256,18 @@
         <h2 class="rr-h2">Choisissez votre<br><span style="color:#FF2D00">niveau de croissance.</span></h2>
         <p style="color:rgba(240,238,232,.5);margin-top:16px;font-size:15px">Sans engagement. Pause ou résiliation quand vous voulez.</p>
       </div>
-      <div class="rr-pack-switcher rr-fade d1">
-        <div class="rr-pack-tab" data-pack="lancement" onclick="selectPack('lancement')">
-          <div class="rr-pack-tab-badge">&nbsp;</div>
-          <div class="rr-pack-tab-name">Lancement</div>
-          <div class="rr-pack-tab-price">149 €<em>HT</em></div>
-          <div class="rr-pack-tab-sub">/ mois · Pour démarrer</div>
+      <div class="rr-pack-switcher-pills rr-fade d1">
+        <div class="rr-pack-pill" data-pack="lancement" onclick="selectPack('lancement')">
+          <span class="rr-pack-pill-name">Lancement</span>
+          <span class="rr-pack-pill-price">149 €/mois</span>
         </div>
-        <div class="rr-pack-tab active" data-pack="visibilite" onclick="selectPack('visibilite')">
-          <div class="rr-pack-tab-badge">⭐ Le plus populaire</div>
-          <div class="rr-pack-tab-name">Visibilité</div>
-          <div class="rr-pack-tab-price">299 €<em>HT</em></div>
-          <div class="rr-pack-tab-sub">/ mois · Pour croître</div>
+        <div class="rr-pack-pill active" data-pack="visibilite" onclick="selectPack('visibilite')">
+          <span class="rr-pack-pill-name">Visibilité</span>
+          <span class="rr-pack-pill-price">299 €/mois</span>
         </div>
-        <div class="rr-pack-tab" data-pack="domination" onclick="selectPack('domination')">
-          <div class="rr-pack-tab-badge">&nbsp;</div>
-          <div class="rr-pack-tab-name">Domination</div>
-          <div class="rr-pack-tab-price">499 €<em>HT</em></div>
-          <div class="rr-pack-tab-sub">/ mois · Croissance max</div>
+        <div class="rr-pack-pill" data-pack="domination" onclick="selectPack('domination')">
+          <span class="rr-pack-pill-name">Domination</span>
+          <span class="rr-pack-pill-price">499 €/mois</span>
         </div>
       </div>
       <div id="pack-lancement" class="rr-pack-detail rr-pack-normal rr-fade d2">
@@ -331,18 +325,24 @@
           <div class="rr-service-check"><span style="color:#FFB800;font-size:16px;flex-shrink:0">✓</span><span>Stratège marketing dédié</span></div>
         </div>
       </div>
-      <div class="rr-pack-switcher-pills rr-fade d3">
-        <div class="rr-pack-pill" data-pack="lancement" onclick="selectPack('lancement')">
-          <span class="rr-pack-pill-name">Lancement</span>
-          <span class="rr-pack-pill-price">149 €/mois</span>
+      <div class="rr-pack-switcher rr-fade d3">
+        <div class="rr-pack-tab" data-pack="lancement" onclick="selectPack('lancement')">
+          <div class="rr-pack-tab-badge">&nbsp;</div>
+          <div class="rr-pack-tab-name">Lancement</div>
+          <div class="rr-pack-tab-price">149 €<em>HT</em></div>
+          <div class="rr-pack-tab-sub">/ mois · Pour démarrer</div>
         </div>
-        <div class="rr-pack-pill active" data-pack="visibilite" onclick="selectPack('visibilite')">
-          <span class="rr-pack-pill-name">Visibilité</span>
-          <span class="rr-pack-pill-price">299 €/mois</span>
+        <div class="rr-pack-tab active" data-pack="visibilite" onclick="selectPack('visibilite')">
+          <div class="rr-pack-tab-badge">⭐ Le plus populaire</div>
+          <div class="rr-pack-tab-name">Visibilité</div>
+          <div class="rr-pack-tab-price">299 €<em>HT</em></div>
+          <div class="rr-pack-tab-sub">/ mois · Pour croître</div>
         </div>
-        <div class="rr-pack-pill" data-pack="domination" onclick="selectPack('domination')">
-          <span class="rr-pack-pill-name">Domination</span>
-          <span class="rr-pack-pill-price">499 €/mois</span>
+        <div class="rr-pack-tab" data-pack="domination" onclick="selectPack('domination')">
+          <div class="rr-pack-tab-badge">&nbsp;</div>
+          <div class="rr-pack-tab-name">Domination</div>
+          <div class="rr-pack-tab-price">499 €<em>HT</em></div>
+          <div class="rr-pack-tab-sub">/ mois · Croissance max</div>
         </div>
       </div>
     </div>
